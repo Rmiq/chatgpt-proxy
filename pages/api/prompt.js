@@ -11,5 +11,7 @@ export default async function handler(req, res) {
     prompt: req.query.prompt,
   });
 
+  console.log(completion.data);
+
   res.status(200).json(completion.data.choices[0].text);
 }
