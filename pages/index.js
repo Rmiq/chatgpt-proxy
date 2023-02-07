@@ -19,8 +19,9 @@ const Home = () => {
     try {
         const res = await fetch(`/api/prompt?apiKey=${data.apiKey}&prompt=${data.prompt}`);
         const json = await res.json();
+        const cleanResponse = json.replace("\n\n", "");
         setIsLoading(false);
-        setResponse(json);
+        setResponse(cleanResponse);
     }
     catch(err) {
       console.log(err)
