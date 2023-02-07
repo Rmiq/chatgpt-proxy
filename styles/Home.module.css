@@ -1,0 +1,68 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form,
+.response {
+  width: 100%;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 14px;
+  margin: 12px 0 4px 0;
+}
+
+.form input {
+  width: 100%;
+  min-height: 40px;
+  padding: 6px;
+}
+
+.form input[type="submit"] {
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.form textarea {
+  min-height: 100px;
+  width: 100%;
+  padding: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.form span {
+  margin: 2px 0;
+  color: red;
+}
+
+.response {
+  margin-top: 16px;
+}
+
+.response textarea {
+  min-height: 200px;
+  width: 100%;
+  padding: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.response h3 {
+ margin-bottom: 4px; 
+}
