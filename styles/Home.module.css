@@ -22,9 +22,16 @@
   flex-direction: column;
 }
 
+.form a{
+  font-size: 12px;
+  color: blue;
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
 .form label {
   font-size: 14px;
-  margin: 12px 0 4px 0;
+  margin: 12px 0 6px 0;
 }
 
 .form input {

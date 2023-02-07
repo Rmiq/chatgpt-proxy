@@ -12,11 +12,14 @@ const Home = () => {
 	} = useForm();
 
   const [response, setResponse] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async data => {
+    setIsLoading(true);
     try {
         const res = await fetch(`/api/prompt?apiKey=${data.apiKey}&prompt=${data.prompt}`);
         const json = await res.json();
+        setIsLoading(false);
         setResponse(json);
     }
     catch(err) {
@@ -36,17 +39,17 @@ const Home = () => {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome to ChatGPT Proxy</h1>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-					<label>OpenAI API key *</label>
+					<label>OpenAI API key *<a href="https://platform.openai.com/account/api-keys">Get it from here</a></label>
 					<input id="apiKey" {...register("apiKey", { required: true })} />
           {errors.apiKey && <span>This field is required</span>}
 					<label>Ask a question *</label>
 					<textarea id="prompt" {...register("prompt", { required: true })} />
           {errors.prompt && <span>This field is required</span>}
-					<input type="submit" value={"Submit"} />
+					<input type="submit" disabled={isLoading} value={isLoading ? "Loading..." : "Submit"} />
 				</form>
 				<div className={styles.response}>
 					<h3>Response:</h3>
-					<textarea id="response" value={response}/>
+					<textarea readOnly={true} id="response" value={response}/>
 				</div>
 			</main>
 		</div>
