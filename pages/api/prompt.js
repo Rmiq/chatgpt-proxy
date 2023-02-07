@@ -9,6 +9,7 @@ export default async function handler(req, res) {
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: req.query.prompt,
+    max_tokens: 2048
   });
 
   console.log(completion.data);
